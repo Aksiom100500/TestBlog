@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestBlog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <ul>
+       <li><%= link_to 'Home', root_path %></li>
+    </ul>
+    <p id="notice"><%= notice %></p>
+    <%= yield %>
+  </body>
+</html>

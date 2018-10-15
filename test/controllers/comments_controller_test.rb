@@ -2,47 +2,34 @@ require 'test_helper'
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @comment = comments(:one)
+    @valid_comment = comments(:one)
+    @invalid_comment = comments(:two)
+    @category = categories(:one)
+    @article = articles(:one)
   end
 
-  test "should get index" do
-    get comments_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_comment_url
-    assert_response :success
-  end
-
-  test "should create comment" do
+  test "should create valid comment for category" do
     assert_difference('Comment.count') do
-      post comments_url, params: { comment: {  } }
+      post category_comments_url(@category), params: { comment: { author: @valid_comment.author , content: @valid_comment.content } }, xhr: true
     end
-
-    assert_redirected_to comment_url(Comment.last)
+    assert( @response.body.include?('.comments'), "validation success" )
   end
-
-  test "should show comment" do
-    get comment_url(@comment)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_comment_url(@comment)
-    assert_response :success
-  end
-
-  test "should update comment" do
-    patch comment_url(@comment), params: { comment: {  } }
-    assert_redirected_to comment_url(@comment)
-  end
-
-  test "should destroy comment" do
-    assert_difference('Comment.count', -1) do
-      delete comment_url(@comment)
+  test "should not create invalid comment for category" do
+    assert_no_difference('Comment.count') do
+      post category_comments_url(@category), params: { comment: { author: @invalid_comment.author , content: @invalid_comment.content } }, xhr: true
     end
-
-    assert_redirected_to comments_url
+    assert( @response.body.include?('#errors'), "validation failure" )
+  end
+    test "should create valid comment article" do
+    assert_difference('Comment.count') do
+      post category_comments_url(@article), params: { comment: { author: @valid_comment.author , content: @valid_comment.content } }, xhr: true
+    end
+    assert( @response.body.include?('.comments'), "validation success" )
+  end
+  test "should not create invalid comment article" do
+    assert_no_difference('Comment.count') do
+      post category_comments_url(@article), params: { comment: { author: @invalid_comment.author , content: @invalid_comment.content } }, xhr: true
+    end
+    assert( @response.body.include?('#errors'), "validation failure" )
   end
 end

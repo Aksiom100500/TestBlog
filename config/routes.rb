@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :categories do
     resources :comments, only: [:create]
-    resources :articles
+    # resources :articles, only: []
   end
-  resources :articles do
+  resources :articles, except: [:index] do
     resources :comments, only: [:create]
   end
   root 'categories#index'

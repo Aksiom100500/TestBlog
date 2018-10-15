@@ -31,7 +31,6 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_no_match( /[A-ZА-Я][A-ZА-Яa-zа-я]+\s+[A-ZА-Яa-zа-я]{2,}\s*\.\s*(?!.)/, @invalid_c.name, 'invalid article name' )
   end
 
-
   test "should show category" do
     get category_url(@valid_c)
     assert_response :success
@@ -57,7 +56,6 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Category.count', -1) do
       delete category_url(@valid_c)
     end
-
     assert_redirected_to categories_url
   end
 

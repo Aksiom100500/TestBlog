@@ -1,0 +1,18 @@
+<%= form_with(model: [ item, item.comments.new], remote: true) do |form| %>
+  <div class="errors"></div>
+  <p>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </p>
+  <p>
+    <%= form.label :file %><br>
+    <%= form.file_field :file %><br>
+  </p>		
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

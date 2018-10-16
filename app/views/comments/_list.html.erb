@@ -1,23 +1,5 @@
-<h2>Comments</h2>
-<div id="comment_list">
+<div class="comments">
+	<h2>Comments</h2>
 	<%= render item.comments.order(created_at: :desc )%>
+	<%= render 'comments/form', item: item %>
 </div>
-<h2>Add a comment:</h2>
-<%= form_with(model: [ item, item.comments.new], remote: true) do |form| %>
-<div id="errors">
-</div>
-<p>
-	<%= form.label :author %><br>
-	<%= form.text_field :author %>
-</p>
-<p>
-	<%= form.label :content %><br>
-	<%= form.text_area :content %>
-</p>
-<p>
-	<%= form.file_field :file, direct_upload: true  %><br>
-</p>			
-<p>
-	<%= form.submit %>
-</p>
-<% end %>

@@ -9,10 +9,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <ul>
-       <li><%= link_to 'Home', root_path %></li>
-    </ul>
-    <p id="notice"><%= notice %></p>
-    <%= yield %>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <%= link_to 'Home', root_path %>
+        </div>
+        <div class="notice"><%= notice %></div>
+      </header>
+      <main>
+        <div class="container">
+        <%= yield %>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

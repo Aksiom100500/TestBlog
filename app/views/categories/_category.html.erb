@@ -1,13 +1,12 @@
-<div class="categoty">
+<div class="category">
   <h2>
     <%= category.name%>
   </h2>
   <p>
     <%= category.description%>
   </p>
-  <p>
-    <%= link_to 'Show', category %>
+  <div class="actions">
     <%= link_to 'Edit', edit_category_path(category) %>
     <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </p>
+  </div>
 </div>

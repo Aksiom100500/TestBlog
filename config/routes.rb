@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :articles, except: [:index] do
     resources :comments, only: [:create]
   end
-  root 'categories#index'
+  root 'home#index'
 end

@@ -5,9 +5,8 @@
   <p>
     <%= article.content%>
   </p>
-  <p>
-    <%= link_to 'Show', article %>
+  <div class="actions">
     <%= link_to 'Edit', edit_article_path(article) %>
     <%= link_to 'Destroy', article, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
-  </p>
+  </div>
 </div>

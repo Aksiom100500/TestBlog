@@ -1,13 +1,13 @@
 <div class="category">
-  <h1><%= @category.name %></h1>
-  <p><%= @category.description %></p>
-  <%= link_to 'Edit', edit_category_path(@category) %>
+  <%= render  @category %>
   <div class="comments">
-    <%= render 'comments/list', item: @category%>
+    <%= render @category.comments%>
   </div>
   <div class="articles">
-    <h2>Articles list:</h2>
+    <h2>Articles</h2>
     <%= render @category.articles %>
-    <%= link_to 'New Article', new_article_path %>
+    <div class="actions">
+      <%= link_to 'New Article', new_article_path %>
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
-$("#errors").html('')
+$(".errors").html('')
 <% @comment.errors.messages.each do |k, v| %>
-	$("#errors").append('<p><%= "#{k.to_s}: #{v.first}" %></p>');
+	$(".errors").append('<p><%= "#{k.to_s}: #{v.first}" %></p>');
 <% end %>
-$('#notice').html('<%=  flash[:notice] = "Something went wrong"%>');
+$('.notice').html('<%=  flash[:notice] = "Something went wrong"%>');

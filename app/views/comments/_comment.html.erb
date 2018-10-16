@@ -6,3 +6,7 @@
 	<strong>Comment:</strong>
 	<%= comment.content %>
 </p>
+<p>
+	<strong>File:</strong>
+	<%= link_to comment.file.filename, rails_blob_path(comment.file, disposition: 'attachment') %>
+</p>

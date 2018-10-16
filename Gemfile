@@ -13,8 +13,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem "autoprefixer-rails"
+gem 'autoprefixer-rails'
 gem 'active_storage_validations'
+gem 'font-awesome-rails'
 # gem 'redis', '~> 4.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

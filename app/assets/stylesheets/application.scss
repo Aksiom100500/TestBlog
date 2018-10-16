@@ -1,45 +1,104 @@
-/*
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css?family=Pacifico&subset=cyrillic,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+@import 'variables';
+@import 'mixins';
+@import 'font-awesome';
+@import 'articles';
+@import 'categories';
+@import 'comments';
+@import 'home';
 
 *{
     margin: 0;
     padding: 0;
 }
+
 .notice {
   color: green;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+@include media('desktop',min){
+  body{font-size: 16px}
+  h1{font-size: 34px}
+  h2{font-size: 26px}
+  h3{font-size: 22px}
+}
+@include media('desktop'){
+  body{font-size: 14px}
+  h1{font-size: 30px}
+  h2{font-size: 20px}
+  h3{font-size: 16px}
+}
+@include media('tablet'){
+  body{font-size: 12px}
+  h1{font-size: 26px}
+  h2{font-size: 22px}
+  h3{font-size: 18px}
+}
+@include media('phone_wide'){
+  body{font-size: 10px}
+  h1{font-size: 22px}
+  h2{font-size: 18px}
+  h3{font-size: 14px}
 }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+h1,h2,h3{
+  font-family: 'Pacifico', cursive;
+}
+a{
+  text-decoration: none;
+}
+h1{
+  &.logo{
+    a{color: $white}
+    padding: 10px;
+    justify-self: center;
   }
-
-  ul li {
-    font-size: 12px;
-    list-style: square;
+}
+body{
+  height: 100vh;
+  background-color: $black;
+  color: $white;
+  font-family: 'Neucha', cursive;
+}
+h2{
+    align-self: center;
+}
+header, main, footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+header{
+  background-color: $darkblue;
+}
+.container{
+  width: 1200px;
+  display:flex;
+  flex-direction: column;
+  .categories,.category,.article, .articles, .comments{
+    display: flex;
+    flex-direction: column;
   }
 }
+// .errors {
+//   width: 450px;
+//   margin-bottom: 20px;
+//   background-color: #f0f0f0;
 
-label {
-  display: block;
-}
+//   h2 {
+//     text-align: left;
+//     font-weight: bold;
+//     padding: 5px 5px 5px 15px;
+//     font-size: 12px;
+//     margin: -7px -7px 0;
+//     background-color: #c00;
+//     color: #fff;
+//   }
+
+//   ul li {
+//     font-size: 12px;
+//     list-style: square;
+//   }
+// }

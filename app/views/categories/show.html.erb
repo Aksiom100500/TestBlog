@@ -1,7 +1,17 @@
 <div class="category">
-  <%= render  @category %>
+  <h2>
+    <%= @category.name%>
+  </h2>
+  <p>
+    <%= @category.description%>
+  </p>
+  <div class="actions">
+    <%= link_to 'Edit', edit_category_path(@category) %>
+    <%= link_to 'Destroy', @category, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
   <div class="comments">
     <%= render @category.comments%>
+    <%= render 'comments/form', item: @category %>
   </div>
   <div class="articles">
     <h2>Articles</h2>

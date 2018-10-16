@@ -1,5 +1,14 @@
 <div class="article">
-	<%= render  @article %>
+  <h2>
+    <%= @article.name %>
+  </h2>
+  <p>
+    <%= @article.content %>
+  </p>
+  <div class="actions">
+    <%= link_to 'Edit', edit_article_path(@article) %>
+    <%= link_to 'Destroy', @article, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
+  </div>
 	<div class="comments">
 		<%= render @article.comments %>
 	</div>

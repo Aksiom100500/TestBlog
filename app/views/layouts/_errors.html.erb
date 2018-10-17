@@ -1,6 +1,6 @@
 <% if item.errors.any? %>
 <div class="errors">
-  <h2><%= pluralize(item.errors.count, "error") %> prohibited this <%=item.name%> from being saved:</h2>
+  <h3><%= pluralize(item.errors.count, "error") %> prohibited this <%=item.name%> from being saved:</h3>
   <ul>
     <% item.errors.full_messages.each do |message| %>
     <li><%= message %></li>

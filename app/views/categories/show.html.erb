@@ -14,12 +14,7 @@
   </div>
   
 	<div class="comments">
-    <%if @comments.present?%>
-    <div class="comments_wrap">
-    <%= render @comments %>
-    </div>
-    <%end%>
-    <%= render 'comments/form', item: @category %>
+    <%= render 'comments/list',item: @category%>
 	</div>
 
   <div class="articles">

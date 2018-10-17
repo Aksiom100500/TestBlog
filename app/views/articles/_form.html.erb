@@ -4,7 +4,7 @@
     <%= form.text_field :name, placeholder: "Name"%>
   </p>
   <p>
-    <%= form.text_area :content, placeholder: "Description"%>
+    <%= form.text_area :content, placeholder: "Description", rows: 6%>
   </p>
   <p>
     <%= form.select(:category_id, Category.all.map{|i|[i.name, i.id]}) %>

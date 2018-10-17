@@ -2,11 +2,12 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order(created_at: :desc)
   end
 
   def show
-    @comments = @category.comments
+    @comments = @category.comments.order(created_at: :desc)
+    @articles = @category.articles.order(created_at: :desc)
   end
 
   def new
@@ -34,7 +35,7 @@ class CategoriesController < ApplicationController
         format.html { redirect_to @category, notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
-        format.html { render :edit }
+        format.html { render :edit}
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end

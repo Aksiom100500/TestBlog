@@ -1,21 +1,35 @@
-<div class="category">
+<div class="categories_category">
   <h2>
     <%= @category.name%>
   </h2>
-  <p>
-    <%= @category.description%>
-  </p>
+  <div class="content">
+    <p>
+      <%= @category.description%>
+    </p>
+  </div>
   <div class="actions">
+    <%= link_to 'Back', :back%>
     <%= link_to 'Edit', edit_category_path(@category) %>
     <%= link_to 'Destroy', @category, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
-  <div class="comments">
-    <%= render @category.comments%>
+  
+	<div class="comments">
+    <%if @comments.present?%>
+    <div class="comments_wrap">
+		<%= render 'comments/list', item: @category %>
+    </div>
+    <button href="#" class="show_comments">Show comments</button>
+    <%end%>
     <%= render 'comments/form', item: @category %>
-  </div>
+	</div>
+
   <div class="articles">
+    <%if @articles.present?%>
     <h2>Articles</h2>
-    <%= render @category.articles %>
+    <div class="articles_wrap">
+      <%= render @articles %>
+    </div>
+    <%end%>
     <div class="actions">
       <%= link_to 'New Article', new_article_path %>
     </div>

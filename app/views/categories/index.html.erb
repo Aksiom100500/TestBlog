@@ -1,8 +1,10 @@
 <div class="categories">
   <h1>Categories</h1>
-  <%= render @categories %>
-  <div class="actions">
-    <%= link_to 'New Category', new_category_path %>
+  <div class="categories_wrap">
+    <%= render @categories %>
+    <div class="actions">
+      <%= link_to 'New Category', new_category_path %>
+    </div>
   </div>
 </div>
 

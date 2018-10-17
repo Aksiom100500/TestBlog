@@ -1,7 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :set_data, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @articles = Article.all.order(created_at: :desc)
+  end
+
   def show
-     @comments = @article.comments
+     @comments = @article.comments.order(created_at: :desc)
+     @category = @article.category
   end
 
   def new

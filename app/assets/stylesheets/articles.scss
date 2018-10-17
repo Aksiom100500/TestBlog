@@ -1,5 +1,13 @@
 .articles{
-  .article{
-    
+  position: relative;
+  &_wrap{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  &_article{
+    position: relative;
+    color: black;
+    background-color: white;
   }
 }

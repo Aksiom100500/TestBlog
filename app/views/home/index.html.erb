@@ -1,8 +1,14 @@
-<div class="categories">
-  <h2>Categories</h2>
-  <%= render  @categories %>
-</div>
-<div class="articles">
-  <h2>Articles</h2>
+<div class="home">
+  <% if @categories.present?%>
+  <h2><%= link_to  "Categories", categories_path %></h2>
+  <div class="home_wrap">
+  <%= render  @categories%>
+  </div>
+  <% end %>
+  <% if @articles.present?%>
+  <h2><%= link_to  "Articles", articles_path %></h2>
+  <div class="home_wrap">
   <%= render  @articles %>
+  </div>
+  <% end %>
 </div>

@@ -1,5 +1,11 @@
 .comments{
-  .comment{
-    
+  position: relative;
+  &_wrap{
+    display: none;
+    justify-content: space-around;
+    transition: opacity 0.3s ease-out;
+  }
+  &_comment{
+       position: relative;
   }
 }

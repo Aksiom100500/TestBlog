@@ -1,5 +1,13 @@
 .categories{
-  .category{
-    
+  position: relative;
+  &_wrap{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  &_category{
+    position: relative;
+    color: black;
+    background-color: white;
   }
 }

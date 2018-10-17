@@ -1,14 +1,18 @@
-<div class="comment">
+<div class="comments_comment">
 	<p>
 		<strong>Commenter:</strong>
 		<%= comment.author %>
 	</p>
+	<%if comment.content.present?%>
 	<p>
 		<strong>Comment:</strong>
 		<%= comment.content %>
 	</p>
+	<%end%>
+	<%if comment.file.present?%>
 	<p>
 		<strong>File:</strong>
 		<%= link_to comment.file.filename, rails_blob_path(comment.file, disposition: 'attachment') %>
 	</p>
+	<%end%>
 </div>

@@ -1,15 +1,24 @@
-<div class="article">
+<div class="articles_article">
   <h2>
     <%= @article.name %>
   </h2>
-  <p>
-    <%= @article.content %>
-  </p>
+  <div class="content">
+    <p>
+      <%= @article.content %>
+    </p>
+  </div>
   <div class="actions">
+    <%= link_to  "To Category", @category %>
     <%= link_to 'Edit', edit_article_path(@article) %>
     <%= link_to 'Destroy', @article, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
   </div>
 	<div class="comments">
-		<%= render @article.comments %>
+		<%if @comments.present?%>
+    <div class="comments_wrap">
+		<%= render 'comments/list', item: @category %>
+    </div>
+    <button href="#" class="show_comments">Show comments...</button>
+    <%end%>
+    <%= render 'comments/form', item: @article %>
 	</div>
 </div>

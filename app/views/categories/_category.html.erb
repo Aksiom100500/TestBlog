@@ -1,10 +1,12 @@
-<div class="category">
+<div class="categories_category">
   <h2>
     <%= category.name%>
   </h2>
-  <p>
-    <%= category.description%>
-  </p>
+  <div class="content">
+    <p>
+      <%= category.description%>
+    </p>
+  </div>
   <div class="actions">
     <%= link_to 'Show', category_path(category)  %>
     <%= link_to 'Edit', edit_category_path(category) %>

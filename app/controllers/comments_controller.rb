@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
 		@comment = @item.comments.new(comment_params)
 		respond_to do |format|
 			if  @comment.save
+				@comments = @item.comments.order(created_at: :desc)
 				format.html { redirect_to @item }
 				format.js
 			else

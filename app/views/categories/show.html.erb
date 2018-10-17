@@ -16,9 +16,8 @@
 	<div class="comments">
     <%if @comments.present?%>
     <div class="comments_wrap">
-		<%= render 'comments/list', item: @category %>
+    <%= render @comments %>
     </div>
-    <button href="#" class="show_comments">Show comments</button>
     <%end%>
     <%= render 'comments/form', item: @category %>
 	</div>

@@ -13,12 +13,11 @@
     <%= link_to 'Destroy', @article, method: :delete,remote: true, data: { confirm: 'Are you sure?' } %>
   </div>
 	<div class="comments">
-		<%if @comments.present?%>
+    <%if @comments.present?%>
     <div class="comments_wrap">
-		<%= render 'comments/list', item: @category %>
+		  <%= render @comments %>
     </div>
-    <button href="#" class="show_comments">Show comments...</button>
     <%end%>
-    <%= render 'comments/form', item: @article %>
+    <%= render 'comments/form', item: @category %>
 	</div>
 </div>

@@ -1,9 +1,9 @@
 .comments{
   position: relative;
   &_wrap{
-    display: none;
+    // display: none;
     justify-content: space-around;
-    transition: opacity 0.3s ease-out;
+    // transition: opacity 0.3s ease-out;
   }
   &_comment{
        position: relative;

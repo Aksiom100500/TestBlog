@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
   before_action :set_data, only: %i[show edit update destroy]
 
   def index
+    byebug
+    current_user
     @articles = Article.all.order(created_at: :desc)
   end
 

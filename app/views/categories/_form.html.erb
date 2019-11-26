@@ -1,5 +1,5 @@
 <%= form_with(model: category, local: true) do |form| %>
-  <%= render 'layouts/errors', item: category%>
+  <%= render 'shared/errors', item: category%>
   <p>
     <%= form.text_field :name, placeholder: "Name"%>
   </p>

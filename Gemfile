@@ -11,16 +11,20 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'ckeditor'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'fast_jsonapi'
 gem "font-awesome-rails"
+gem 'friendly_id'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem "mini_magick"
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'oj'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.0'
+gem 'redis', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem "mini_magick"
 # gem 'redis', '~> 4.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

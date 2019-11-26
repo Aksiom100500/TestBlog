@@ -4,17 +4,13 @@ class CommentsController < ApplicationController
   before_action :get_item, only: [:create]
 
   def create
-    @comment = @item.comments.new(comment_params)
-    respond_to do |format|
-      if @comment.save
-        @comments = @item.comments.order(created_at: :desc)
-        format.html { redirect_to @item }
-        format.js
-      else
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-        format.js { render 'errors.js.erb' }
-      end
-    end
+    @comment = @item.comments.create! comment_params
+    # respond_to do |format|
+    #   if @comment.save
+    #     @comments = @item.comments.order(created_at: :desc)
+    #     format.html { redirect_to @item }
+    #   end
+    # end
   end
 
   private
@@ -28,6 +24,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:author, :content, :file)
+    params.require(:comment).permit(:content)
   end
 end

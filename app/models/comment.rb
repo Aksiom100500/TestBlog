@@ -6,4 +6,8 @@ class Comment < ApplicationRecord
   has_many :comments, as: :commentable
   validates :content, presence: true
   after_create_commit { RenderCommentJob.perform_later self }
+
+  def author
+    user.email
+  end
 end

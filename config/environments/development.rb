@@ -56,6 +56,12 @@ Rails.application.configure do
   config.assets.quiet = true
   
   config.action_cable.url = 'ws://localhost:3000/cable'
+  config.action_cable.worker_pool_size = 4
+  config.action_cable.log_tags = [
+      -> request { request.env['user_account_id'] || "no-account" },
+      :action_cable,
+      -> request { request.uuid }
+  ]
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

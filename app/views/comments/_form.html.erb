@@ -1,17 +1,8 @@
-<%= form_with(model: [ item, item.comments.new]) do |form| %>
-  <div class="errors"></div>
-  <p>
-    <%= form.label :author %><br>
-    <%= form.text_field :author %>
-  </p>
+<%= form_with(model: [item, item.comments.new]) do |form| %>
   <p>
     <%= form.label :content %><br>
     <%= form.text_area :content, rows: 6 %>
   </p>
-  <p>
-    <%= form.label :file %><br>
-    <%= form.file_field :file %><br>
-  </p>		
   <p>
     <%= form.submit %>
   </p>

@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @comments = @article.comments.order(created_at: :desc)
+    @comments = @article.comments
     @category = @article.category
   end
 

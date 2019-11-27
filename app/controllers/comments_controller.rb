@@ -4,12 +4,15 @@ class CommentsController < ApplicationController
   before_action :get_item, only: [:create]
 
   def create
-    @comment = @item.comments.create! comment_params
-    # respond_to do |format|
-    #   if @comment.save
-    #     @comments = @item.comments.order(created_at: :desc)
-    #     format.html { redirect_to @item }
-    #   end
+    @comment = @item.comments.new comment_params
+    @comment.user_id = current_user.id
+    @comment.save
+    # if @comment.save
+    #   ActionCable.server.broadcast('comments_channel',
+    #     comment: @comment.content,
+    #     author: @comment.author
+    #   )
+    head :ok
     # end
   end
 

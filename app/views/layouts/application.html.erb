@@ -15,6 +15,16 @@
     <header>
       <div class="container">
         <h1 class="logo"><%= link_to 'SimpleBlog', root_path %></h1>
+        <div class="state_btn_wrapper">
+          <button class="state_btn">
+            Change State
+          </button>
+          <div class="active_state_btn-wrapper circle">
+            <button class="active_state_btn">
+              StateChanged
+            </button>
+          </div>
+        </div>
         <div id="notification_wrap">
           <%= render 'shared/notification' %>
         </div>

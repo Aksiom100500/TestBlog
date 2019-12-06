@@ -144,3 +144,48 @@ input[type='submit']{
   top: 10px;
   right: 10px;
 }
+
+.state_btn_wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  overflow: hidden;
+}
+.state_btn{
+  background: red;
+  color: white;
+}
+.active_state_btn{
+  color: red;
+  background: white;
+  align-self: center;
+
+}
+.active_state_btn-wrapper{
+  position: absolute;
+  align-self: center;
+  overflow: hidden;
+  display: flex;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  justify-content: center;
+  transition: 2s;
+}
+.state_btn_wrapper:hover{
+  .active_state_btn-wrapper{
+    width:140px;
+    height: 140px;
+  }
+}
+.state_btn, .active_state_btn{
+  padding: 6px 12px 6px 10px ;
+  border: none;
+  border-radius: 6px;
+  width: 120px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Pacifico', cursive;
+  cursor: pointer;
+}

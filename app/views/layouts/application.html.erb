@@ -14,7 +14,16 @@
   <body>
     <header>
       <div class="container">
-        <h1 class="logo"><%= link_to 'SimpleBlog', root_path %></h1>
+        <%= link_to(root_path) do %>
+          <h1 class="logo">
+            Simple Blog
+<!--            <div class="blink_wrap">-->
+<!--              <div class="blink">-->
+<!--                Simple Blog-->
+<!--              </div>-->
+<!--            </div>-->
+          </h1>
+        <%end %>
         <div class="state_btn_wrapper">
           <button class="state_btn">
             Change State
@@ -32,6 +41,10 @@
     </header>
     <main>
       <div class="container">
+        <div class="sphere_wrap">
+          <div class="sphere_drop"></div>
+          <div class="sphere"></div>
+        </div>
       <%= yield %>
       </div>
     </main>

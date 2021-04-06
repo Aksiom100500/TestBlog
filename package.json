@@ -1,8 +1,20 @@
 {
   "name": "TestBlog",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.2.1",
+    "turbolinks": "^5.2.0"
+  },
   "devDependencies": {
-    "@rails/actioncable": "^6.0.1"
+    "@rails/actioncable": "^6.0.1",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "^2.0.3",
+    "webpack-dev-server": "^3.11.2"
   }
 }

@@ -9,10 +9,4 @@
 		<%= comment.content %>
 	</p>
 	<%end%>
-	<%if comment.file.present?%>
-	<p>
-		<strong>File:</strong>
-		<%= link_to comment.file.filename, rails_blob_path(comment.file, disposition: 'attachment') %>
-	</p>
-	<%end%>
 </div>

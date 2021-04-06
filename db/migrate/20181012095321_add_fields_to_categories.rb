@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AddFieldsToCategories < ActiveRecord::Migration[5.2]
   def change
     add_column :categories, :name, :string

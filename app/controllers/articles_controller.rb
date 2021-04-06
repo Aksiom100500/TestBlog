@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
-  before_action :set_data, only: [:show, :edit, :update, :destroy]
+  before_action :set_data, only: %i[show edit update destroy]
 
   def index
     @articles = Article.all.order(created_at: :desc)
   end
 
   def show
-     @comments = @article.comments.order(created_at: :desc)
-     @category = @article.category
+    @comments = @article.comments.order(created_at: :desc)
+    @category = @article.category
   end
 
   def new
@@ -50,12 +52,13 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def set_data
-      @article = Article.find(params[:id])
-      @category = @article.category
-    end
 
-    def article_params
-      params.require(:article).permit(:name, :content, :category_id)
-    end
+  def set_data
+    @article = Article.find(params[:id])
+    @category = @article.category
+  end
+
+  def article_params
+    params.require(:article).permit(:name, :content, :category_id)
+  end
 end

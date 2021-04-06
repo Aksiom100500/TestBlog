@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Comment < ApplicationRecord
   belongs_to :comentable, polymorphic: true, optional: true
   has_one_attached :file, dependent: :destroy

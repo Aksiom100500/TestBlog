@@ -1,6 +1,5 @@
 @import 'variables';
 @import 'mixins';
-@import 'font-awesome';
 @import 'articles';
 @import 'categories';
 @import 'comments';
@@ -74,9 +73,6 @@ form{
 a{
   text-decoration: none;
   color: $blue;
-  //.logo{
-  //  color: white;
-  //}
 }
 
 h1{

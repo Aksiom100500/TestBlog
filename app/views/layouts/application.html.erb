@@ -9,40 +9,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= action_cable_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=Neucha|Pacifico&amp;subset=cyrillic" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <div class="container">
-        <%= link_to(root_path) do %>
-          <h1 class="logo">
-            Simple Blog
-          </h1>
-        <%end %>
-        <div class="state_btn_wrapper">
-          <button class="state_btn">
-            Change State
-          </button>
-          <div class="active_state_btn-wrapper circle">
-            <button class="active_state_btn">
-              StateChanged
-            </button>
-          </div>
-        </div>
-        <div id="notification_wrap">
-          <%= render 'shared/notification' %>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="container">
-      <%= yield %>
-      </div>
-    </main>
-    <footer>
-      <div class="container">
-      </div>
-    </footer>
+    <%= render "components/header" %>
+    <%= render "components/main" %>
+    <%= render "components/footer"%>
   </body>
 </html>

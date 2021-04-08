@@ -1,0 +1,8 @@
+header{
+  @apply fixed w-full top-0;
+  background-color: rgba(96, 165, 250,.8);
+  .content{
+    @apply flex container mx-auto;
+    // @include test;
+  }
+}

@@ -14,8 +14,5 @@
     width: 40%;
     position: relative;
     margin-bottom: 20px;
-    @include media('tablet'){
-      width: 90%;
-    }
   }
 }

@@ -1,0 +1,14 @@
+body{
+  &::-webkit-scrollbar {
+    @apply w-3;
+  }
+  &::-webkit-scrollbar-track {
+    @include bg-gray;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-md border-solid bg-opacity-80 border-gray-300 bg-gray-800 border-2;
+    &:hover{
+      @apply bg-gray-500 bg-opacity-80;
+    }
+  }
+}

@@ -1,15 +1,9 @@
 <header>
-  <div class="content">
-    <%= link_to(root_path) do %>
-      <h1 class="logo">
-        Simple Blog
-      </h1>
-    <%end %>
-    <%= render "components/nav" %>
-    <menu>
-    </menu>
-    <div id="notification_wrap">
-      <%= render 'shared/notification' %>
+  <menu>
+    <div class='logo'>
+      <%= link_to 'Simple Blog', root_path %>
     </div>
-  </div>
+    <%= render 'components/nav' %>
+    <%= render 'components/notification' %>
+  </menu>
 </header>

@@ -1,30 +1,3 @@
-// rubber
-:root{
-  --media-breakdown: 1920*100vw;
-}
-@media (min-width: 1200px) {
-}
-@media (max-width: 1199px) {
-  :root{
-    --media-breakdown: 1660*100vw;
-  }
-}
-@media (max-width: 991px) {
-  :root{
-    --media-breakdown: 1.2*1px;
-  }
-}
-@media (max-width: 768px) {
-  :root{
-    --media-breakdown: 1.4*1px;
-  }
-}
-
-@function rpx($var){
-  $result: calc(#{$var}/var(--media-breakdown));
-  @return $result;
-}
-
 @mixin media($width, $type: max) {
   @if map_has_key($breakpoints, $width) {
       $width: map_get($breakpoints, $width);
@@ -36,11 +9,52 @@
       }
   }
 }
-@mixin col($width, $cols, $padding: 15) {
-  flex-basis: $width * 100% / $cols;
-  max-width: $width * 100% / $cols;
-  padding-left: $padding + px;
-  padding-right: $padding + px;
-  flex-shrink: 0;
-  flex-grow: 0;
+
+@function rpx($var){
+  $result: calc(#{$var}/var(--media-breakdown));
+  @return $result;
+}
+
+@mixin bg-gray{
+  @apply bg-gray-300;
+}
+
+@mixin transition{
+  @apply duration-500 transition-all ease-out;
+}
+
+@mixin pseudo{
+  @apply relative;
+  z-index: 1;
+  &::before{
+    @apply block w-full h-full absolute top-0 left-0;
+    content: '';
+    border-radius: inherit;
+    background-color: inherit;
+    text-color: inherit;
+    z-index: -1;
+  }
+}
+
+@mixin button{
+  @apply py-2 px-4 block rounded-lg bg-gray-800 font-bold cursor-pointer text-gray-300 opacity-80;
+  @include transition;
+  @include pseudo;
+  &:hover{
+    @apply text-white bg-green-400;
+    &::before{
+      @include ping;
+    }
+  }
+}
+
+@mixin ping($scale: 1.2, $duration: 1.5s, $delay: .1s){
+  animation: ping $duration cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation-delay: $delay;
+  @keyframes ping {
+    75%, 100% {
+      transform: scale($scale);
+      opacity: 0;
+    }
+  }
 }

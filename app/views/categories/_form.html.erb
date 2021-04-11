@@ -1,5 +1,5 @@
 <%= form_with(model: category, local: true) do |form| %>
-  <%= render 'shared/errors', item: category%>
+  <%= render 'components/errors', item: category%>
   <p>
     <%= form.text_field :name, placeholder: "Name"%>
   </p>
@@ -7,6 +7,6 @@
     <%= form.text_area :description, placeholder: "Description", rows: 6%>
   </p>
   <div class="submit">
-    <%= form.submit %>
+    <%= form.button :button, type: :submit %>
   </div>
 <% end %>

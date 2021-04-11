@@ -1,15 +1,9 @@
 form{
-  width: 320px;
-  align-self: center;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 0 0 20px 0 rgba(0,0,0,0.75);
-  display: flex;
-  flex-direction: column;
+  @apply m-3 p-3 flex items-center flex-col;
   p{
-    margin-bottom: 10px;
+    @apply mb-3;
   }
   input, textarea{
-    width: 100%;
+    @apply w-full p-3;
   }
 }

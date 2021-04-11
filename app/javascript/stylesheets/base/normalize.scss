@@ -10,7 +10,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input, select, textarea {
+time, mark, audio, video, input, select, textarea,button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -66,5 +66,26 @@ a:hover, a:focus{
 *{
   &:focus,&:active,&:hover{
     outline: none;
+  }
+}
+
+@include media(desktop-wide, min){
+  :root{
+    --media-breakdown: 1920*100vw;
+  }
+}
+@include media(desktop){
+  :root{
+    --media-breakdown: 1660*100vw;
+  }
+}
+@include media(tablet_m) {
+  :root{
+    --media-breakdown: 1.2*1px;
+  }
+}
+@include media(tablet)  {
+  :root{
+    --media-breakdown: 1.4*1px;
   }
 }

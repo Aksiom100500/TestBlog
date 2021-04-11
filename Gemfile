@@ -7,6 +7,7 @@ ruby '2.7.1'
 
 gem 'active_storage_validations'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'cancancan'
 gem 'capistrano-rails', group: :development
 gem 'ckeditor'
 gem 'devise'

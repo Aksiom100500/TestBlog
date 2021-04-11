@@ -1,8 +1,17 @@
 header{
-  @apply fixed w-full top-0;
-  background-color: rgba(96, 165, 250,.8);
-  .content{
-    @apply flex container mx-auto;
-    // @include test;
+  @apply fixed w-full top-0 bg-gray-800 opacity-80 z-10;
+  .logo{
+    a{
+      font-family: 'Pacifico', cursive;
+      @apply flex items-center border-r-4 text-3xl border-gray-300 border-solid pr-6 h-16 text-gray-300;
+      @include transition;
+      &::before{
+        @apply top-auto left-auto w-auto h-auto;
+      }
+      &:hover{
+        @apply text-white;
+        text-shadow: 0 0 20px white;
+      }
+    }
   }
 }

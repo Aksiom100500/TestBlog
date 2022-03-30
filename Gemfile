@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem "mini_magick"
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'oj'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'rails', '~> 6.1'
 gem 'redis', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
